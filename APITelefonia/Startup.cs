@@ -22,6 +22,7 @@ namespace APITelefonia
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddResponseCaching();  
             services.AddControllers();
             services.AddDbContext<TelefoniaContext>(options => options.UseSqlServer(Configuration.GetConnectionString("EduCnn")));
             services.AddSwaggerGen(c =>
@@ -41,6 +42,8 @@ namespace APITelefonia
             }
 
             context.Seed();
+
+            app.UseResponseCaching();
 
             app.UseHttpsRedirection();
 

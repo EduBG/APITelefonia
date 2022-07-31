@@ -16,6 +16,7 @@
         }
 
         // GET: api/<TerminalController>
+        [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any, VaryByQueryKeys = new[] { "impactlevel", "pii" })]
         [HttpGet]
         public IEnumerable<ResultDTO> Get()
         {
@@ -23,6 +24,7 @@
         }
 
         // GET api/<TerminalController>/5
+        [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Any, VaryByQueryKeys = new[] { "id"})]
         [HttpGet("{id}")]
         public ResultDTO Get(int id)
         {
