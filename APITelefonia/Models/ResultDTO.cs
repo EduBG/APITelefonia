@@ -4,16 +4,16 @@ namespace APITelefonia.Models
 {
     public class ResultDTO
     {
-        public string Nombre;
+        public string Nombre { get; set; }
 
-        public string Descripcion;
+        public string Descripcion { get; set; }
 
-        public string Nombre_fabricante;
+        public string Nombre_fabricante { get; set; }
 
-        public string Nombre_estado;
+        public string Nombre_estado { get; set; }
 
-        public DateTime Fecha_fabricacion;
+        public DateTime Fecha_fabricacion { get; set; }
 
-        public DateTime Fecha_estado;
+        public DateTime Fecha_estado { get; set; }
     }
 }

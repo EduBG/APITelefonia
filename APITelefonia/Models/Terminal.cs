@@ -5,7 +5,6 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
-    using APITelefonia.Models;
 
     [Table("Terminal")]
     public class Terminal
@@ -27,8 +26,9 @@
         public string Terminal_name { get; set; }
 
 
-        public ResultDTO GetTerminal(int idTerminal) { 
-        
+        public ResultDTO GetTerminal(int idTerminal)
+        {
+
             var result = new ResultDTO();
 
             using (var ctx = new TelefoniaContext())
@@ -46,7 +46,7 @@
                               Nombre_estado = e.Estado_name,
                               Nombre_fabricante = f.Fab_name
 
-                          }).Single();
+                          }).SingleOrDefault();
             }
 
             return result;
