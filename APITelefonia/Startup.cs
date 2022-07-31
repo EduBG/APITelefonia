@@ -23,7 +23,7 @@ namespace APITelefonia
         {
 
             services.AddControllers();
-            services.AddDbContext<TeefoniaContext>(options => options.UseSqlServer(Configuration.GetConnectionString("EduCnn")));
+            services.AddDbContext<TelefoniaContext>(options => options.UseSqlServer(Configuration.GetConnectionString("EduCnn")));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "APITelefonia", Version = "v1" });
@@ -31,7 +31,7 @@ namespace APITelefonia
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, TelefoniaContext context)
         {
             if (env.IsDevelopment())
             {
@@ -39,6 +39,8 @@ namespace APITelefonia
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "APITelefonia v1"));
             }
+
+            context.Seed();
 
             app.UseHttpsRedirection();
 

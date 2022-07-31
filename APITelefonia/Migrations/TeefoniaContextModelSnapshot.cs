@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace APITelefonia.Migrations
 {
-    [DbContext(typeof(TeefoniaContext))]
+    [DbContext(typeof(TelefoniaContext))]
     partial class TeefoniaContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

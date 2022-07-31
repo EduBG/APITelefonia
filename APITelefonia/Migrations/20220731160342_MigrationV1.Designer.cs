@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace APITelefonia.Migrations
 {
-    [DbContext(typeof(TeefoniaContext))]
+    [DbContext(typeof(TelefoniaContext))]
     [Migration("20220731160342_MigrationV1")]
     partial class MigrationV1
     {
